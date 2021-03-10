@@ -1,4 +1,4 @@
-import developmentImg from "./../assets/development.jpg";
+import developmentImg from "./../assets/development.svg";
 import { Typography, makeStyles } from "@material-ui/core";
 
 const useStyle = makeStyles({
@@ -6,10 +6,10 @@ const useStyle = makeStyles({
     marginLeft: "240px",
     marginTop: "60px",
     padding: "20px",
-    height: "90vh",
+    height: "60vh",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
+    justifyContent: "space-around",
     alignItems: "center",
   },
   img: {
