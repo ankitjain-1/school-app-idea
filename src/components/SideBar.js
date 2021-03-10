@@ -156,6 +156,7 @@ export default function SideBar() {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = useState(true);
+  const [selectedIndex, setSelectedIndex] = useState(window.location.hash);
   const [notificationCount, setNotificationCount] = useState(5);
 
   const handleDrawerOpen = () => {
@@ -293,10 +294,11 @@ export default function SideBar() {
             ].map((item, index) => (
               <ListItem
                 key={item.text}
-                selected={window.location.hash === `#${item.url}`}
+                selected={selectedIndex === `#${item.url}`}
                 button
                 onClick={() => {
-                  history.push(item.url);
+                  history.push(`${item.url}`);
+                  setSelectedIndex(`#${item.url}`);
                 }}
               >
                 <ListItemIcon>{item.icon}</ListItemIcon>
