@@ -1,0 +1,7 @@
+.muilistitem-root.mui-selected * {
+  background-color: #045de9;
+  /* color: white; */
+}
+.MuiListItem-button:hover {
+  background-color: #045de9;
+}

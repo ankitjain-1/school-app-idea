@@ -1,0 +1,16 @@
+.MuiSelect-filled.MuiSelect-filled {
+  padding: 10px 24px 10px 30px;
+  border-radius: 20px;
+  color: white;
+}
+
+.MuiFilledInput-root {
+  border-radius: 20px;
+}
+.MuiFilledInput-underline::after,
+.MuiFilledInput-underline::before {
+  width: 0;
+}
+.MuiSelect-iconFilled * {
+  color: white;
+}

@@ -10,7 +10,6 @@ import Badge from "@material-ui/core/Badge";
 import List from "@material-ui/core/List";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
-import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
@@ -18,10 +17,21 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import HomeIcon from "@material-ui/icons/Home";
 import logo from "./../assets/Logo_small.png";
 import SearchIcon from "@material-ui/icons/Search";
+import HomeIcon from "@material-ui/icons/Home";
 import NotificationsIcon from "@material-ui/icons/Notifications";
+import DashboardIcon from "@material-ui/icons/Dashboard";
+import AssignmentIcon from "@material-ui/icons/Assignment";
+import TimelineIcon from "@material-ui/icons/Timeline";
+import EventIcon from "@material-ui/icons/Event";
+import PermMediaIcon from "@material-ui/icons/PermMedia";
+import BorderAllIcon from "@material-ui/icons/BorderAll";
+import BookIcon from "@material-ui/icons/Book";
+import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
+import EmojiFlagsIcon from "@material-ui/icons/EmojiFlags";
+import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
+import "./../styles/sideBar.css";
 
 const drawerWidth = 240;
 
@@ -130,21 +140,23 @@ const useStyles = makeStyles((theme) => ({
     width: "72px",
     height: "80px",
     marginLeft: "30%",
+    marginTop: "20px",
   },
   logoClose: {
     width: "72px",
     height: "80px",
     marginLeft: "0",
+    marginTop: "20px",
   },
 }));
 
 export default function SideBar() {
+  const [selectedMenuItem, setSelectedMenuItem] = useState(0);
   const history = useHistory();
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
   const [notificationCount, setNotificationCount] = React.useState(5);
-  const [selectedIndex, setSelectedIndex] = useState(0);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -241,32 +253,54 @@ export default function SideBar() {
             src={logo}
             alt="logo"
           />
-          <Divider />
           <List>
             {[
-              { text: "Home", icon: "HomeIcon" },
-              { text: "Notice Board", icon: "HomeIcon" },
-              { text: "Attendance", icon: "HomeIcon" },
-              { text: "Fees Details", icon: "HomeIcon" },
-              { text: "Calendar", icon: "HomeIcon" },
-              { text: "Multimedia", icon: "HomeIcon" },
-              { text: "Time-tables", icon: "HomeIcon" },
-              { text: "Schedules", icon: "HomeIcon" },
-              { text: "Support Request", icon: "HomeIcon" },
-              { text: "Support", icon: "HomeIcon" },
-              { text: "Account", icon: "HomeIcon" },
+              { text: "Home", icon: <HomeIcon />, url: "/" },
+              {
+                text: "Notice Board",
+                icon: <DashboardIcon />,
+                url: "/noticeBoard",
+              },
+              {
+                text: "Attendance",
+                icon: <TimelineIcon />,
+                url: "/attendance",
+              },
+              {
+                text: "Fees Details",
+                icon: <AssignmentIcon />,
+                url: "/feesDetails",
+              },
+              { text: "Calendar", icon: <EventIcon />, url: "/calendar" },
+              {
+                text: "Multimedia",
+                icon: <PermMediaIcon />,
+                url: "/multimedia",
+              },
+              {
+                text: "Time-tables",
+                icon: <BorderAllIcon />,
+                url: "/timeTable",
+              },
+              { text: "Schedules", icon: <BookIcon />, url: "/schedules" },
+              {
+                text: "Support Request",
+                icon: <PeopleAltIcon />,
+                url: "/supportRequest",
+              },
+              { text: "Support", icon: <EmojiFlagsIcon />, url: "/support" },
+              { text: "Account", icon: <PersonOutlineIcon />, url: "/account" },
             ].map((item, index) => (
               <ListItem
-                selected={selectedIndex === index}
+                selected={index === selectedMenuItem}
                 button
                 key={item.text}
                 onClick={() => {
-                  history.push("/attendance");
+                  setSelectedMenuItem(index);
+                  history.push(item.url);
                 }}
               >
-                <ListItemIcon>
-                  <HomeIcon />
-                </ListItemIcon>
+                <ListItemIcon>{item.icon}</ListItemIcon>
                 <ListItemText primary={item.text} />
               </ListItem>
             ))}
