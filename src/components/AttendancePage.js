@@ -20,7 +20,7 @@ const useStyle = makeStyles({
 
 const AttendacnePage = (props) => {
   const classes = useStyle();
-  const [selectedDay, setSelectedDay] = useState(0);
+  const [selectedDay, setSelectedDay] = useState(1);
 
   const getDayCards = () => {
     const weekDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
