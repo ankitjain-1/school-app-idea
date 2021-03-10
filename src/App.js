@@ -17,7 +17,7 @@ function App() {
       <Router>
         <div className="App">
           <SideBar />
-          <Route path="/" exact component={HomePage} />
+          <Route path="/home" component={HomePage} />
           <Route path="/attendance" exact component={AttendancePage} />
         </div>
       </Router>

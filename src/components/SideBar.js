@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import clsx from "clsx";
 import { fade, makeStyles, useTheme } from "@material-ui/core/styles";
@@ -31,6 +31,7 @@ import BookIcon from "@material-ui/icons/Book";
 import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
 import EmojiFlagsIcon from "@material-ui/icons/EmojiFlags";
 import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
+import AdminDetails from "./../components/AdminDetails";
 import "./../styles/sideBar.css";
 
 const drawerWidth = 240;
@@ -151,12 +152,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SideBar() {
-  const [selectedMenuItem, setSelectedMenuItem] = useState(0);
   const history = useHistory();
   const classes = useStyles();
   const theme = useTheme();
-  const [open, setOpen] = React.useState(true);
-  const [notificationCount, setNotificationCount] = React.useState(5);
+  const [open, setOpen] = useState(true);
+  const [notificationCount, setNotificationCount] = useState(5);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -255,7 +255,7 @@ export default function SideBar() {
           />
           <List>
             {[
-              { text: "Home", icon: <HomeIcon />, url: "/" },
+              { text: "Home", icon: <HomeIcon />, url: "/home" },
               {
                 text: "Notice Board",
                 icon: <DashboardIcon />,
@@ -292,11 +292,10 @@ export default function SideBar() {
               { text: "Account", icon: <PersonOutlineIcon />, url: "/account" },
             ].map((item, index) => (
               <ListItem
-                selected={index === selectedMenuItem}
-                button
                 key={item.text}
+                selected={window.location.hash === `#${item.url}`}
+                button
                 onClick={() => {
-                  setSelectedMenuItem(index);
                   history.push(item.url);
                 }}
               >
@@ -305,6 +304,7 @@ export default function SideBar() {
               </ListItem>
             ))}
           </List>
+          <AdminDetails />
         </Drawer>
       </div>
     </>
