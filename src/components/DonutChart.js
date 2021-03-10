@@ -10,6 +10,8 @@ const useStyle = makeStyles({
     borderRadius: "20px",
     margin: "0 30px",
     marginRight: "10%",
+    paddingBottom: 0,
+    marginBottom: "30px",
   },
 });
 

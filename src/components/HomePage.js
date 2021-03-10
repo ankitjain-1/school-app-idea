@@ -13,6 +13,7 @@ const useStyle = makeStyles({
   },
   cardContainer: {
     justifyItems: "center",
+    marginTop: "30px",
   },
   bottomDiv: {
     margin: "2rem 0 0 0",
