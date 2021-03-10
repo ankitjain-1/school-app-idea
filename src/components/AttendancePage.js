@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Grid, makeStyles, Typography } from "@material-ui/core";
+import { makeStyles, Typography } from "@material-ui/core";
 import DropDowns from "./../components/DropDowns";
 import DayCard from "./../components/DayCard";
 import AttendanceCard from "./../components/AttendanceCard";
