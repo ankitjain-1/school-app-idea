@@ -52,10 +52,10 @@ const AttendanceCard = (props) => {
   return (
     <div className={classes.root}>
       <div className={classes.periodCircle}>
-        <Typography variant="p" component="h4">
+        <Typography variant="body1" component="h4">
           {getPeriodNum(props.periodNum)}
         </Typography>
-        <Typography variant="p" component="h6">
+        <Typography variant="inherit" component="h6">
           Period
         </Typography>
       </div>

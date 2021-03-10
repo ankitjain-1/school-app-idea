@@ -23,10 +23,10 @@ const AdminDetails = (props) => {
     <div className={classes.root}>
       <img src={avatar} alt="avatar" />
       <div className={classes.details}>
-        <Typography variant="p" component="h4">
+        <Typography variant="body1" component="h4">
           Fr. Paul D'Souza
         </Typography>
-        <Typography variant="p" component="h5">
+        <Typography variant="body2" component="h6">
           Admin Account
         </Typography>
       </div>
