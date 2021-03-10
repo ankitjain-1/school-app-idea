@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/school-app-idea/static/css/main.3c6e9b3d.chunk.css",
-    "main.js": "/school-app-idea/static/js/main.3f79ed95.chunk.js",
-    "main.js.map": "/school-app-idea/static/js/main.3f79ed95.chunk.js.map",
+    "main.js": "/school-app-idea/static/js/main.1f06f2e3.chunk.js",
+    "main.js.map": "/school-app-idea/static/js/main.1f06f2e3.chunk.js.map",
     "runtime-main.js": "/school-app-idea/static/js/runtime-main.c9aba10c.js",
     "runtime-main.js.map": "/school-app-idea/static/js/runtime-main.c9aba10c.js.map",
     "static/css/2.8cebfa1f.chunk.css": "/school-app-idea/static/css/2.8cebfa1f.chunk.css",
@@ -13,13 +13,13 @@
     "static/css/main.3c6e9b3d.chunk.css.map": "/school-app-idea/static/css/main.3c6e9b3d.chunk.css.map",
     "static/js/2.6702030c.chunk.js.LICENSE.txt": "/school-app-idea/static/js/2.6702030c.chunk.js.LICENSE.txt",
     "static/media/Logo_small.b67b1e06.png": "/school-app-idea/static/media/Logo_small.b67b1e06.png",
-    "static/media/development.c231dedb.jpg": "/school-app-idea/static/media/development.c231dedb.jpg"
+    "static/media/development.753f2580.svg": "/school-app-idea/static/media/development.753f2580.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.c9aba10c.js",
     "static/css/2.8cebfa1f.chunk.css",
     "static/js/2.6702030c.chunk.js",
     "static/css/main.3c6e9b3d.chunk.css",
-    "static/js/main.3f79ed95.chunk.js"
+    "static/js/main.1f06f2e3.chunk.js"
   ]
 }
