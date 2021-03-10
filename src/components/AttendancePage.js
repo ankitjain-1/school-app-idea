@@ -27,11 +27,14 @@ const AttendacnePage = (props) => {
     const items = [];
     for (let i = 1; i <= 15; i++) {
       items.push(
-        <div style={{ display: "inline" }} onClick={() => setSelectedDay(i)}>
+        <div
+          key={i}
+          style={{ display: "inline" }}
+          onClick={() => setSelectedDay(i)}
+        >
           <DayCard
             selectedDay={selectedDay}
             index={i}
-            key={i}
             date={i}
             day={weekDays[i % 7]}
           />
@@ -44,7 +47,9 @@ const AttendacnePage = (props) => {
   const getAttendanceCards = () => {
     let items = [];
     for (let i = 1; i <= 8; i++) {
-      items.push(<AttendanceCard studentName="Abhishek Yadav" periodNum={i} />);
+      items.push(
+        <AttendanceCard key={i} studentName="Abhishek Yadav" periodNum={i} />
+      );
     }
     return items;
   };
